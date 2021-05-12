@@ -502,7 +502,7 @@ $mform->disabledIf('assignsubmission_maharaws_archiveonrelease','assignsubmissio
                                       array('users' => array( array($field => $username,
                                                                     'query' => $query))));
             $result = array_pop($result);
-            $result['views']['ids'] = array_map('intval', explode(', ', $result['views']['ids']));
+            $result['views']['ids'] = array_map('intval', explode(',', $result['views']['ids']));
 
             // Overwrite url with full URL.
             foreach ($result['views']['data'] as $key => $value) {
@@ -604,7 +604,7 @@ $mform->disabledIf('assignsubmission_maharaws_archiveonrelease','assignsubmissio
                        array('views' => array( array($field => $username,
                                                       'viewid' => $viewid,
                                                       'iscollection' => $iscollection,
-                                                      'viewoutcomes' => implode(', ', $viewoutcomes),
+                                                      'viewoutcomes' => implode(',', $viewoutcomes),
                                                       'archiveonrelease' => $this->get_config('archiveonrelease'),
                                                       'externalid' => $this->assignment->get_course_module()->id))
                        ));
